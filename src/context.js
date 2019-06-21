@@ -7,7 +7,12 @@ const reducer = (state, action) => {
     case 'DELETE_USER':
       return {
         ...state,
-        users: state.users.filter(user =>action.payload!==user.id)
+        users: state.users.filter(user => action.payload !== user.id)
+      }
+    case 'ADD_USER':
+      return {
+        users: [...state.users, action.payload]
+
       }
   }
 }
